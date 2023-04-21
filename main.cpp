@@ -11,7 +11,7 @@ int main()
     // initializes a vector to store the recipes
     std::vector<Recipe> recipes;
 
-    readRecipes(recipes, "C://Users/emely/OneDrive/Desktop/Spring 2023/COP3530/RAW_recipes.csv");
+    readRecipes(recipes, "C:/UF/2022-2023/SP23/COP3530/raw_recipes.csv");
 
     return 0;
 }
