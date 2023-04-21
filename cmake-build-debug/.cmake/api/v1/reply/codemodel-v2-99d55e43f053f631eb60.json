@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.22"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "InstaRecipe::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-InstaRecipe-Debug-a4efb913c0e051148795.json",
+					"jsonFile" : "target-InstaRecipe-Debug-dc01ae65246f98e9322c.json",
 					"name" : "InstaRecipe",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/iankreger/InstaRecipe/cmake-build-debug",
-		"source" : "/Users/iankreger/InstaRecipe"
+		"build" : "C:/Users/emely/OneDrive/Desktop/Spring 2023/COP3530/InstaRecipe/cmake-build-debug",
+		"source" : "C:/Users/emely/OneDrive/Desktop/Spring 2023/COP3530/InstaRecipe"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 4
 	}
 }

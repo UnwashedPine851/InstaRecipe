@@ -4,4 +4,4 @@ project(InstaRecipe)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(InstaRecipe
-        main.cpp)
+        main.cpp recipe.cpp)
