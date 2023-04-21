@@ -11,8 +11,63 @@ int main()
     // initializes a vector to store the recipes
     std::vector<Recipe> recipes;
 
+    // stores recipes in a recipe vector
     readRecipes(recipes, "C://Users/emely/OneDrive/Desktop/Spring 2023/COP3530/RAW_recipes.csv");
-    recipes[0].print();
+
+    // prints welcome message
+    std::cout << "Welcome to InstaRecipe! We're happy to have you here :)" << std::endl;
+
+    int option = 0;
+
+    // infinite loop until the user exits
+    while (option != 8)
+    {
+        // prints the menu and asks the user to input an option
+        std::cout << "\nWhich nutrition fact would you like to search by?" << std::endl;
+        std::cout << "1. Calories\n2. Total Fat (PDV)\n3. Sugar (PDV)\n4. Sodium (PDV)\n5. Protein (PDV)\n6. Saturated Fat (PDV)\n7. Total Carbohydrate (PDV)\n8. Quit" << std::endl;
+        std::cin >> option;
+
+        if (option == 8)
+        {
+            break;
+        }
+        else if (option == 1)
+        {
+            // calories
+        }
+        else if (option == 2)
+        {
+            // total fat
+        }
+        else if (option == 3)
+        {
+            // sugar
+        }
+        else if (option == 4)
+        {
+            // sodium
+        }
+        else if (option == 5)
+        {
+            // protein
+        }
+        else if (option == 6)
+        {
+            // saturated fat
+        }
+        else if (option == 7)
+        {
+            // carbs
+        }
+        else
+        {
+            std::cout << "Please input a valid option." << std::endl;
+        }
+
+    }
+
+    // prints exit message
+    std::cout << "Thanks for using InstaRecipe! We hope you found a recipe that fits your desired needs!" << std::endl;
 
     return 0;
 }
