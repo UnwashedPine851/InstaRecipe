@@ -7,7 +7,7 @@ class Recipe {
 public:
     Recipe();
     Recipe(std::string name, int minutes, float calories, float totalFatPDV, float sugarPDV, float sodiumPDV,
-           float proteinPDV, float saturatedFat, std::vector<std::string> steps, std::vector<std::string> ingredients);
+           float proteinPDV, float saturatedFatPDV, float totalCarbohydratePDV, std::vector<std::string> steps, std::vector<std::string> ingredients);
     std::string getName();
     int getMinutes();
     float getCalories();
@@ -15,7 +15,8 @@ public:
     float getSugarPDV();
     float getSodiumPDV();
     float getProteinPDV();
-    float getSaturatedFat();
+    float getSaturatedFatPDV();
+    float getTotalCarbohydratePDV();
     std::vector<std::string> getSteps();
     std::vector<std::string> getIngredients();
     void print();
@@ -27,7 +28,8 @@ private:
     float sugarPDV;
     float sodiumPDV;
     float proteinPDV;
-    float saturatedFat;
+    float saturatedFatPDV;
+    float totalCarbohydratePDV;
     std::vector<std::string> steps;
     std::vector<std::string> ingredients;
 };
