@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <chrono>
 #include "recipe.h"
 
 void readRecipes(std::vector<Recipe>& recipes, std::string fileName);
@@ -11,8 +12,16 @@ int main()
     // initializes a vector to store the recipes
     std::vector<Recipe> recipes;
 
+    // sets a start time
+    auto start = std::chrono::high_resolution_clock::now();
+
     // stores recipes in a recipe vector
     readRecipes(recipes, "C://Users/emely/OneDrive/Desktop/Spring 2023/COP3530/RAW_recipes.csv");
+
+    // sets a stop time
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+    std::cout << "Time in milliseconds to load CSV file: " << duration.count() << std::endl << std::endl;
 
     // prints welcome message
     std::cout << "Welcome to InstaRecipe! We're happy to have you here :)" << std::endl;
