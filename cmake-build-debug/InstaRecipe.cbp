@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/emely/OneDrive/Desktop/Spring 2023/COP3530/InstaRecipe/binarySearch.cpp">
+			<Option target="InstaRecipe"/>
+		</Unit>
+		<Unit filename="C:/Users/emely/OneDrive/Desktop/Spring 2023/COP3530/InstaRecipe/binarySearch.h">
+			<Option target="InstaRecipe"/>
+		</Unit>
 		<Unit filename="C:/Users/emely/OneDrive/Desktop/Spring 2023/COP3530/InstaRecipe/main.cpp">
 			<Option target="InstaRecipe"/>
 		</Unit>

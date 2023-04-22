@@ -4,4 +4,4 @@ project(InstaRecipe)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(InstaRecipe
-        main.cpp recipe.cpp)
+        main.cpp recipe.cpp binarySearch.h binarySearch.cpp)
