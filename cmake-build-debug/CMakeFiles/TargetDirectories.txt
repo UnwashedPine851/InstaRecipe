@@ -1,0 +1,3 @@
+C:/UF/projects/InstaRecipe/cmake-build-debug/CMakeFiles/InstaRecipe.dir
+C:/UF/projects/InstaRecipe/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/UF/projects/InstaRecipe/cmake-build-debug/CMakeFiles/rebuild_cache.dir
