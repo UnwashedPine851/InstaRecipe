@@ -128,6 +128,30 @@ InstaRecipe/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\InstaRecipe.dir\build.make CMakeFiles/InstaRecipe.dir/build
 .PHONY : InstaRecipe/fast
 
+binarySearch.obj: binarySearch.cpp.obj
+.PHONY : binarySearch.obj
+
+# target to build an object file
+binarySearch.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InstaRecipe.dir\build.make CMakeFiles/InstaRecipe.dir/binarySearch.cpp.obj
+.PHONY : binarySearch.cpp.obj
+
+binarySearch.i: binarySearch.cpp.i
+.PHONY : binarySearch.i
+
+# target to preprocess a source file
+binarySearch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InstaRecipe.dir\build.make CMakeFiles/InstaRecipe.dir/binarySearch.cpp.i
+.PHONY : binarySearch.cpp.i
+
+binarySearch.s: binarySearch.cpp.s
+.PHONY : binarySearch.s
+
+# target to generate assembly for a file
+binarySearch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InstaRecipe.dir\build.make CMakeFiles/InstaRecipe.dir/binarySearch.cpp.s
+.PHONY : binarySearch.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -185,6 +209,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... InstaRecipe
+	@echo ... binarySearch.obj
+	@echo ... binarySearch.i
+	@echo ... binarySearch.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
