@@ -5,6 +5,7 @@
 #include <chrono>
 #include "recipe.h"
 #include "binarySearch.h"
+#include "QuickSort.h"
 
 void readRecipes(std::vector<Recipe>& recipes, std::string fileName);
 
@@ -14,6 +15,9 @@ void MergeSort(std::vector<Recipe> &recipeList, int left, int right, int nutrien
 
 int main()
 {
+    // initialize booleans to check if vectors for each category have been sorted
+
+
     // initializes a vector to store the recipes
     std::vector<Recipe> recipes;
 
@@ -51,6 +55,22 @@ int main()
         else if (option == 1)
         {
             // calories
+
+            // sets a start time
+            start = std::chrono::high_resolution_clock::now();
+
+            quickSort(recipes, 0, recipes.size() - 1, 1);
+
+            // sets a stop time
+            stop = std::chrono::high_resolution_clock::now();
+            duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+            std::cout << "Time in milliseconds to sort with Quick Sort: " << duration.count() << std::endl << std::endl;
+
+            // print result
+            std::cout << "Enter a target value for Calories: " << std::endl;
+            float target;
+            std::cin >> target;
+            binarySearch(recipes, 1, target).print();
         }
         else if (option == 2)
         {

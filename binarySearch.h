@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include "recipe.h"
 
 Recipe binarySearch(std::vector<Recipe>& recipes, int nutrientChoice, float target);
 
