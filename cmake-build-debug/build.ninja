@@ -65,6 +65,14 @@ build CMakeFiles/InstaRecipe.dir/recipe.cpp.obj: CXX_COMPILER__InstaRecipe_Debug
   TARGET_COMPILE_PDB = CMakeFiles\InstaRecipe.dir\
   TARGET_PDB = InstaRecipe.pdb
 
+build CMakeFiles/InstaRecipe.dir/binarySearch.cpp.obj: CXX_COMPILER__InstaRecipe_Debug C$:/UF/projects/InstaRecipe/binarySearch.cpp || cmake_object_order_depends_target_InstaRecipe
+  DEP_FILE = CMakeFiles\InstaRecipe.dir\binarySearch.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++14
+  OBJECT_DIR = CMakeFiles\InstaRecipe.dir
+  OBJECT_FILE_DIR = CMakeFiles\InstaRecipe.dir
+  TARGET_COMPILE_PDB = CMakeFiles\InstaRecipe.dir\
+  TARGET_PDB = InstaRecipe.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target InstaRecipe
@@ -73,7 +81,7 @@ build CMakeFiles/InstaRecipe.dir/recipe.cpp.obj: CXX_COMPILER__InstaRecipe_Debug
 #############################################
 # Link the executable InstaRecipe.exe
 
-build InstaRecipe.exe: CXX_EXECUTABLE_LINKER__InstaRecipe_Debug CMakeFiles/InstaRecipe.dir/main.cpp.obj CMakeFiles/InstaRecipe.dir/recipe.cpp.obj
+build InstaRecipe.exe: CXX_EXECUTABLE_LINKER__InstaRecipe_Debug CMakeFiles/InstaRecipe.dir/main.cpp.obj CMakeFiles/InstaRecipe.dir/recipe.cpp.obj CMakeFiles/InstaRecipe.dir/binarySearch.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\InstaRecipe.dir
