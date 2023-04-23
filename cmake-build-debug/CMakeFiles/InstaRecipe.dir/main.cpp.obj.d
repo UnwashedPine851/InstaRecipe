@@ -149,4 +149,5 @@ CMakeFiles/InstaRecipe.dir/main.cpp.obj: \
  C:/PROGRA~1/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/parse_numbers.h \
  C:\Users\emely\OneDrive\Desktop\Spring\ 2023\COP3530\InstaRecipe\recipe.h \
  C:\Users\emely\OneDrive\Desktop\Spring\ 2023\COP3530\InstaRecipe\binarySearch.h \
- C:\Users\emely\OneDrive\Desktop\Spring\ 2023\COP3530\InstaRecipe\QuickSort.h
+ C:\Users\emely\OneDrive\Desktop\Spring\ 2023\COP3530\InstaRecipe\QuickSort.h \
+ C:\Users\emely\OneDrive\Desktop\Spring\ 2023\COP3530\InstaRecipe\mergeSort.h

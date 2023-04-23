@@ -97,6 +97,12 @@
 		<Unit filename="C:/Users/emely/OneDrive/Desktop/Spring 2023/COP3530/InstaRecipe/main.cpp">
 			<Option target="InstaRecipe"/>
 		</Unit>
+		<Unit filename="C:/Users/emely/OneDrive/Desktop/Spring 2023/COP3530/InstaRecipe/mergeSort.cpp">
+			<Option target="InstaRecipe"/>
+		</Unit>
+		<Unit filename="C:/Users/emely/OneDrive/Desktop/Spring 2023/COP3530/InstaRecipe/mergeSort.h">
+			<Option target="InstaRecipe"/>
+		</Unit>
 		<Unit filename="C:/Users/emely/OneDrive/Desktop/Spring 2023/COP3530/InstaRecipe/recipe.cpp">
 			<Option target="InstaRecipe"/>
 		</Unit>

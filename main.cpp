@@ -6,19 +6,22 @@
 #include "recipe.h"
 #include "binarySearch.h"
 #include "QuickSort.h"
+#include "mergeSort.h"
 
 void readRecipes(std::vector<Recipe>& recipes, std::string fileName);
-
-void MergeHelper(std::vector<Recipe> recipeList, int left, int mid, int right, int nutrientChoice);
-
-void MergeSort(std::vector<Recipe> &recipeList, int left, int right, int nutrientChoice);
 
 int main()
 {
     // initialize booleans to check if vectors for each category have been sorted
+    bool checkCalories = false;
+    bool checkTotalFatPDV = false;
+    bool checkSugarPDV = false;
+    bool checkSodiumPDV = false;
+    bool checkProteinPDV = false;
+    bool checkSaturatedFatPDV = false;
+    bool checkTotalCarbohydratePDC = false;
 
-
-    // initializes a vector to store the recipes
+    // initializes a vectors to store the recipes
     std::vector<Recipe> recipes;
 
     // sets a start time
@@ -32,13 +35,26 @@ int main()
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
     std::cout << "Time in milliseconds to load CSV file: " << duration.count() << std::endl << std::endl;
 
+    // initializes vectors to store the recipes sorted for each category
+    std::vector<Recipe> recipesCaloriesQuick = recipes;
+    std::vector<Recipe> recipesCaloriesMerge = recipes;
+    std::vector<Recipe> recipesTotalFatPDVQuick = recipes;
+    std::vector<Recipe> recipesTotalFatPDVMerge = recipes;
+    std::vector<Recipe> recipesSugarQuick = recipes;
+    std::vector<Recipe> recipesSugarMerge = recipes;
+    std::vector<Recipe> recipesSodiumQuick = recipes;
+    std::vector<Recipe> recipesSodiumMerge = recipes;
+    std::vector<Recipe> recipesProteinQuick = recipes;
+    std::vector<Recipe> recipesProteinMerge = recipes;
+    std::vector<Recipe> recipesSaturatedFatPDVQuick = recipes;
+    std::vector<Recipe> recipesSaturatedFatPDVMerge = recipes;
+    std::vector<Recipe> recipesTotalCarbohydrateQuick = recipes;
+    std::vector<Recipe> recipesTotalCarbohydrateMerge = recipes;
+
     // prints welcome message
     std::cout << "Welcome to InstaRecipe! We're happy to have you here :)" << std::endl;
 
     int option = 0;
-
-    // test for karl
-    // MergeSort(recipes, 0, recipes.size() - 1, 1);
 
     // infinite loop until the user exits
     while (option != 8)
@@ -56,21 +72,34 @@ int main()
         {
             // calories
 
+            // checks if the calorie vectors have been sorted
+
             // sets a start time
             start = std::chrono::high_resolution_clock::now();
 
-            quickSort(recipes, 0, recipes.size() - 1, 1);
+            quickSort(recipesCaloriesQuick, 0, recipes.size() - 1, 1);
 
             // sets a stop time
             stop = std::chrono::high_resolution_clock::now();
             duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
             std::cout << "Time in milliseconds to sort with Quick Sort: " << duration.count() << std::endl << std::endl;
 
+//            // sets a start time
+//            start = std::chrono::high_resolution_clock::now();
+//
+//            MergeSort(recipesCaloriesMerge, 0, recipes.size() - 1, 1);
+//
+//            // sets a stop time
+//            stop = std::chrono::high_resolution_clock::now();
+//            duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+//            std::cout << "Time in milliseconds to sort with Merge Sort: " << duration.count() << std::endl << std::endl;
+
             // print result
             std::cout << "Enter a target value for Calories: " << std::endl;
             float target;
             std::cin >> target;
-            binarySearch(recipes, 1, target).print();
+            binarySearch(recipesCaloriesQuick, 1, target).print();
+            //binarySearch(recipesCaloriesMerge, 1, target).print();
         }
         else if (option == 2)
         {
@@ -193,152 +222,5 @@ void readRecipes(std::vector<Recipe>& recipes, std::string fileName)
         // creates a new recipe object and adds it to the vector of recipes
         Recipe newRecipe = Recipe(name, minutes, calories, totalFatPDV, sugarPDV, sodiumPDV, proteinPDV, saturatedFatPDV, totalCarbohydratePDV, steps, ingredients);
         recipes.push_back(newRecipe);
-    }
-}
-
-//Credit to COP3530 Slides
-
-void MergeHelper(std::vector<Recipe> recipeList, int left, int mid, int right, int nutrientChoice)
-{
-    //Create X < arr[left..mid] & Y < arr[mid+1..right]
-    int n1 = mid - left + 1;
-    int n2 = right - mid;
-    std::vector<Recipe> X(n1);
-    std::vector<Recipe> Y(n2);
-
-    for(int i = 0; i < n1; i++)
-        X.insert(X.begin() + i, recipeList[left + i]);
-    for(int j = 0; j < n2; j++)
-        Y.insert(Y.begin() + j, recipeList[mid + 1 + j]);
-
-    //Merge arrays X and Y into arr
-    int i, j, k;
-    i = 0;
-    j = 0;
-    k = left;
-
-    switch(nutrientChoice)
-    {
-        case 1:
-            while(i < n1 && j < n2)
-            {
-                if(X[i].getCalories() <= Y[j].getCalories())
-                {
-                    recipeList[k] = X[i];
-                    i++;
-                }
-                else
-                {
-                    recipeList[k] = Y[j];
-                    j++;
-                }
-                k++;
-            }
-            break;
-        case 2:
-            while(i < n1 && j < n2)
-            {
-                if(X[i].getTotalFatPDV() <= Y[j].getTotalFatPDV())
-                {
-                    recipeList[k] = X[i];
-                    i++;
-                }
-                else
-                {
-                    recipeList[k] = Y[j];
-                    j++;
-                }
-                k++;
-            }
-            break;
-        case 3:
-            while(i < n1 && j < n2)
-            {
-                if(X[i].getSugarPDV() <= Y[j].getSugarPDV())
-                {
-                    recipeList[k] = X[i];
-                    i++;
-                }
-                else
-                {
-                    recipeList[k] = Y[j];
-                    j++;
-                }
-                k++;
-            }
-            break;
-        case 4:
-            while(i < n1 && j < n2)
-            {
-                if(X[i].getSodiumPDV() <= Y[j].getSodiumPDV())
-                {
-                    recipeList[k] = X[i];
-                    i++;
-                }
-                else
-                {
-                    recipeList[k] = Y[j];
-                    j++;
-                }
-                k++;
-            }
-            break;
-        case 5:
-            while(i < n1 && j < n2)
-            {
-                if(X[i].getProteinPDV() <= Y[j].getProteinPDV())
-                {
-                    recipeList[k] = X[i];
-                    i++;
-                }
-                else
-                {
-                    recipeList[k] = Y[j];
-                    j++;
-                }
-                k++;
-            }
-            break;
-        case 6:
-            while(i < n1 && j < n2)
-            {
-                if(X[i].getSaturatedFatPDV() <= Y[j].getSaturatedFatPDV())
-                {
-                    recipeList[k] = X[i];
-                    i++;
-                }
-                else
-                {
-                    recipeList[k] = Y[j];
-                    j++;
-                }
-                k++;
-            }
-            break;
-    }
-
-    //When we run out of element in either X or Y append the remaining elements
-    while(i < n1)
-    {
-        recipeList[k] = X[i];
-        i++;
-        k++;
-    }
-    while(j < n2)
-    {
-        recipeList[k] = Y[j];
-        j++;
-        k++;
-    }
-}
-
-void MergeSort(std::vector<Recipe> &recipeList, int left, int right, int nutrientChoice) {
-    if (left < right) {
-        int mid = left + (right - left) / 2;
-        MergeSort(recipeList, left, mid, nutrientChoice);
-        MergeSort(recipeList, mid + 1, right, nutrientChoice);
-
-        //Merge the sorted subarrays
-        MergeHelper(recipeList, left, mid, right, nutrientChoice);
     }
 }

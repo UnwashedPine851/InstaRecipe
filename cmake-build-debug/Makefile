@@ -200,6 +200,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\InstaRecipe.dir\build.make CMakeFiles/InstaRecipe.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+mergeSort.obj: mergeSort.cpp.obj
+.PHONY : mergeSort.obj
+
+# target to build an object file
+mergeSort.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InstaRecipe.dir\build.make CMakeFiles/InstaRecipe.dir/mergeSort.cpp.obj
+.PHONY : mergeSort.cpp.obj
+
+mergeSort.i: mergeSort.cpp.i
+.PHONY : mergeSort.i
+
+# target to preprocess a source file
+mergeSort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InstaRecipe.dir\build.make CMakeFiles/InstaRecipe.dir/mergeSort.cpp.i
+.PHONY : mergeSort.cpp.i
+
+mergeSort.s: mergeSort.cpp.s
+.PHONY : mergeSort.s
+
+# target to generate assembly for a file
+mergeSort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\InstaRecipe.dir\build.make CMakeFiles/InstaRecipe.dir/mergeSort.cpp.s
+.PHONY : mergeSort.cpp.s
+
 recipe.obj: recipe.cpp.obj
 .PHONY : recipe.obj
 
@@ -242,6 +266,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... mergeSort.obj
+	@echo ... mergeSort.i
+	@echo ... mergeSort.s
 	@echo ... recipe.obj
 	@echo ... recipe.i
 	@echo ... recipe.s

@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/InstaRecipe.dir/binarySearch.cpp.obj.d"
   "CMakeFiles/InstaRecipe.dir/main.cpp.obj"
   "CMakeFiles/InstaRecipe.dir/main.cpp.obj.d"
+  "CMakeFiles/InstaRecipe.dir/mergeSort.cpp.obj"
+  "CMakeFiles/InstaRecipe.dir/mergeSort.cpp.obj.d"
   "CMakeFiles/InstaRecipe.dir/recipe.cpp.obj"
   "CMakeFiles/InstaRecipe.dir/recipe.cpp.obj.d"
   "InstaRecipe.exe"
