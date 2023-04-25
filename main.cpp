@@ -4,6 +4,7 @@
 #include <vector>
 #include <chrono>
 #include "recipe.h"
+#include "binarySearch.h"
 
 void readRecipes(std::vector<Recipe>& recipes, std::string fileName);
 
@@ -32,7 +33,8 @@ int main()
 
     int option = 0;
 
-    MergeSort(recipes, 0, recipes.size() - 1, 1);
+    // test for karl
+    // MergeSort(recipes, 0, recipes.size() - 1, 1);
 
     // infinite loop until the user exits
     while (option != 8)
