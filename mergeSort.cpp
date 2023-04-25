@@ -11,9 +11,11 @@ void MergeHelper(std::vector<Recipe> &recipeList, int left, int mid, int right, 
     std::vector<Recipe> Y(n2);
 
     for(int i = 0; i < n1; i++)
-        X.insert(X.begin() + i, recipeList[left + i]);
+        //X.insert(X.begin() + i, recipeList[left + i]);
+        X[i] = recipeList[i];
     for(int j = 0; j < n2; j++)
-        Y.insert(Y.begin() + j, recipeList[mid + 1 + j]);
+        //Y.insert(Y.begin() + j, recipeList[mid + 1 + j]);
+        Y[j] = recipeList[j];
 
     //Merge arrays X and Y into arr
     int i, j, k;
