@@ -41,10 +41,10 @@ Recipe binarySearchHelperCalories(std::vector<Recipe>& recipes, float target, in
         // checks if the target is equal to the value at the middle index
         if (recipes[middle].getCalories() == target)
             return recipes[middle];
-        // if the target is less than the value at the middle index
+            // if the target is less than the value at the middle index
         else if (recipes[middle].getCalories() > target)
             high = middle - 1;
-        // if the target is greater than the value at the middle index
+            // if the target is greater than the value at the middle index
         else
             low = middle + 1;
     }

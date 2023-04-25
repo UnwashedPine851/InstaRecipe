@@ -1,7 +1,6 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.24)
 project(InstaRecipe)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
-add_executable(InstaRecipe
-        main.cpp recipe.cpp binarySearch.h binarySearch.cpp QuickSort.cpp QuickSort.cpp QuickSort.cpp mergeSort.cpp mergeSort.h)
+add_executable(InstaRecipe main.cpp mergeSort.cpp mergeSort.cpp binarySearch.cpp QuickSort.cpp recipe.cpp)

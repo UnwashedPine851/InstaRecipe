@@ -3,7 +3,6 @@
 #include "recipe.h"
 #include "QuickSort.h"
 
-
 //int main()
 //{
 //    // make a vector of floats to test with
@@ -29,7 +28,7 @@
 //}
 
 
-// cited from Sorting Lecture, slide 121 and 122 
+// cited from Sorting Lecture, slide 121 and 122
 void quickSort(std::vector<Recipe>& numbers, float low, float high, int nutrientChoice)
 {
     // need pivot, up and down pointers
