@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/emely/OneDrive/Desktop/Spring 2023/COP3530/InstaRecipe/cmake-build-debug",
-		"source" : "C:/Users/emely/OneDrive/Desktop/Spring 2023/COP3530/InstaRecipe"
+		"build" : "C:/UF/projects/InstaRecipe/cmake-build-debug",
+		"source" : "C:/UF/projects/InstaRecipe"
 	},
 	"version" : 
 	{
