@@ -9,4 +9,9 @@ add_executable(InstaRecipe
         main.cpp
         QuickSort.cpp
         recipe.cpp
-        recipe.h QuickSort.h)
+        recipe.h
+        QuickSort.h
+        mergeSort.cpp
+        mergeSort.h
+        binarySearch.h
+        binarySearch.cpp mergeSort.cpp)

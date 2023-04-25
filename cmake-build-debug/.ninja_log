@@ -1,5 +1,12 @@
 # ninja log v5
-9	89	7039085644789783	CMakeFiles/InstaRecipe.dir/main.cpp.obj	be034339c18632c3
-3	540	7039072102627605	CMakeFiles/InstaRecipe.dir/QuickSort.cpp.obj	4daf2003b170a4cc
-9	563	7037586317319443	CMakeFiles/InstaRecipe.dir/recipe.cpp.obj	267593583bd8c632
-541	693	7039072104114466	InstaRecipe.exe	1b250a3681e53ff0
+4	892	7040858417239023	CMakeFiles/InstaRecipe.dir/main.cpp.obj	be034339c18632c3
+6	502	7040856161596709	CMakeFiles/InstaRecipe.dir/mergeSort.cpp.obj	bfffe600929e7624
+3	537	7040853866531852	CMakeFiles/InstaRecipe.dir/QuickSort.cpp.obj	4daf2003b170a4cc
+15	535	7040853866511870	CMakeFiles/InstaRecipe.dir/recipe.cpp.obj	267593583bd8c632
+893	1146	7040858419747369	InstaRecipe.exe	ace1e4638f48eb70
+1	195	7040859842550447	build.ninja	38d5ba6be323fce2
+2	451	7040856161102354	CMakeFiles/InstaRecipe.dir/binarySearch.cpp.obj	25c23f9562d98417
+3	719	7040861922532350	CMakeFiles/InstaRecipe.dir/main.cpp.obj	be034339c18632c3
+720	994	7040861925217342	InstaRecipe.exe	ace1e4638f48eb70
+3	768	7040866262066504	CMakeFiles/InstaRecipe.dir/main.cpp.obj	be034339c18632c3
+768	965	7040866263907635	InstaRecipe.exe	ace1e4638f48eb70
