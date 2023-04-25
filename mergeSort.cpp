@@ -12,10 +12,10 @@ void MergeHelper(std::vector<Recipe> &recipeList, int left, int mid, int right, 
 
     for(int i = 0; i < n1; i++)
         //X.insert(X.begin() + i, recipeList[left + i]);
-        X[i] = recipeList[i];
+        X[i] = recipeList[left + i];
     for(int j = 0; j < n2; j++)
         //Y.insert(Y.begin() + j, recipeList[mid + 1 + j]);
-        Y[j] = recipeList[j];
+        Y[j] = recipeList[mid + 1 + j];
 
     //Merge arrays X and Y into arr
     int i, j, k;

@@ -12,6 +12,9 @@ void readRecipes(std::vector<Recipe>& recipes, std::string fileName);
 
 int main()
 {
+    // prints welcome message
+    std::cout << "Welcome to InstaRecipe! We're happy to have you here :)" << std::endl;
+
     // initialize booleans to check if vectors for each category have been sorted
     bool checkCalories = false;
     bool checkTotalFatPDV = false;
@@ -19,7 +22,7 @@ int main()
     bool checkSodiumPDV = false;
     bool checkProteinPDV = false;
     bool checkSaturatedFatPDV = false;
-    bool checkTotalCarbohydratePDC = false;
+    bool checkTotalCarbohydratePDV = false;
 
     // initializes a vectors to store the recipes
     std::vector<Recipe> recipes;
@@ -38,11 +41,7 @@ int main()
 
     // initializes vectors to store the recipes sorted for each category
     std::vector<Recipe> recipesCaloriesQuick = recipes;
-    std::vector<Recipe> recipesCaloriesMerge;
-    for (int i = 0; i < 10; i++)
-    {
-        recipesCaloriesMerge.push_back(recipes[i]);
-    }
+    std::vector<Recipe> recipesCaloriesMerge = recipes;
     std::vector<Recipe> recipesTotalFatPDVQuick = recipes;
     std::vector<Recipe> recipesTotalFatPDVMerge = recipes;
     std::vector<Recipe> recipesSugarQuick = recipes;
@@ -72,9 +71,6 @@ int main()
     auto durationTotalCarbohydrateQuick = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
     auto durationTotalCarbohydrateMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
 
-    // prints welcome message
-    std::cout << "Welcome to InstaRecipe! We're happy to have you here :)" << std::endl;
-
     int option = 0;
 
     // infinite loop until the user exits
@@ -101,20 +97,20 @@ int main()
                 // sets a start time
                 start = std::chrono::high_resolution_clock::now();
 
-                //quickSort(recipesCaloriesQuick, 0, recipes.size() - 1, 1);
+                quickSort(recipesCaloriesQuick, 0, recipesCaloriesQuick.size() - 1, 1);
 
                 // sets a stop time
                 stop = std::chrono::high_resolution_clock::now();
                 durationCaloriesQuick = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
 
-//            // sets a start time
-//            start = std::chrono::high_resolution_clock::now();
-//
-              MergeSort(recipesCaloriesMerge, 0, recipes.size() - 1, 1);
-//
-//            // sets a stop time
-//            stop = std::chrono::high_resolution_clock::now();
-//            durationCaloriesMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+                // sets a start time
+                start = std::chrono::high_resolution_clock::now();
+
+                MergeSort(recipesCaloriesMerge, 0, recipesCaloriesMerge.size() - 1, 1);
+
+                // sets a stop time
+                stop = std::chrono::high_resolution_clock::now();
+                durationCaloriesMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
             }
 
             std::cout << "Time in milliseconds to sort with Quick Sort: " << durationCaloriesQuick.count() << std::endl;
@@ -126,7 +122,7 @@ int main()
             std::cin >> target;
             std::cout << "\nYour search for a recipe with " << target << " Calories returned:" << std::endl;
             binarySearch(recipesCaloriesQuick, 1, target).print();
-            binarySearch(recipesCaloriesMerge, 1, target).print();
+            // binarySearch(recipesCaloriesMerge, 1, target).print();
         }
         else if (option == 2)
         {
@@ -146,14 +142,14 @@ int main()
                 stop = std::chrono::high_resolution_clock::now();
                 durationTotalFatPDVQuick = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
 
-//            // sets a start time
-//            start = std::chrono::high_resolution_clock::now();
-//
-//            MergeSort(recipesTotalFatPDVMerge, 0, recipes.size() - 1, 2);
-//
-//            // sets a stop time
-//            stop = std::chrono::high_resolution_clock::now();
-//            durationTotalFatPDVMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+                // sets a start time
+                start = std::chrono::high_resolution_clock::now();
+
+                MergeSort(recipesTotalFatPDVMerge, 0, recipes.size() - 1, 2);
+
+                // sets a stop time
+                stop = std::chrono::high_resolution_clock::now();
+                durationTotalFatPDVMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
             }
 
             std::cout << "Time in milliseconds to sort with Quick Sort: " << durationTotalFatPDVQuick.count() << std::endl;
@@ -165,7 +161,7 @@ int main()
             std::cin >> target;
             std::cout << "\nYour search for a recipe with " << target << " Total Fat (PDV) returned:" << std::endl;
             binarySearch(recipesTotalFatPDVQuick, 2, target).print();
-            //binarySearch(recipesTotalFatPDVMerge, 2, target).print();
+            // binarySearch(recipesTotalFatPDVMerge, 2, target).print();
         }
         else if (option == 3)
         {
@@ -185,14 +181,14 @@ int main()
                 stop = std::chrono::high_resolution_clock::now();
                 durationSugarQuick = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
 
-//            // sets a start time
-//            start = std::chrono::high_resolution_clock::now();
-//
-//            MergeSort(recipesSugarMerge, 0, recipes.size() - 1, 3);
-//
-//            // sets a stop time
-//            stop = std::chrono::high_resolution_clock::now();
-//            durationSugarMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+                // sets a start time
+                start = std::chrono::high_resolution_clock::now();
+
+                MergeSort(recipesSugarMerge, 0, recipes.size() - 1, 3);
+
+                // sets a stop time
+                stop = std::chrono::high_resolution_clock::now();
+                durationSugarMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
             }
 
             std::cout << "Time in milliseconds to sort with Quick Sort: " << durationSugarQuick.count() << std::endl;
@@ -204,7 +200,7 @@ int main()
             std::cin >> target;
             std::cout << "\nYour search for a recipe with " << target << " Sugar (PDV) returned:" << std::endl;
             binarySearch(recipesSugarQuick, 3, target).print();
-            //binarySearch(recipesSugarMerge, 3, target).print();
+            // binarySearch(recipesSugarMerge, 3, target).print();
         }
         else if (option == 4)
         {
@@ -224,14 +220,14 @@ int main()
                 stop = std::chrono::high_resolution_clock::now();
                 durationSodiumQuick = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
 
-//            // sets a start time
-//            start = std::chrono::high_resolution_clock::now();
-//
-//            MergeSort(recipesSodiumMerge, 0, recipes.size() - 1, 4);
-//
-//            // sets a stop time
-//            stop = std::chrono::high_resolution_clock::now();
-//            durationSodiumMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+                // sets a start time
+                start = std::chrono::high_resolution_clock::now();
+
+                MergeSort(recipesSodiumMerge, 0, recipes.size() - 1, 4);
+
+                // sets a stop time
+                stop = std::chrono::high_resolution_clock::now();
+                durationSodiumMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
             }
 
             std::cout << "Time in milliseconds to sort with Quick Sort: " << durationSodiumQuick.count() << std::endl;
@@ -243,124 +239,124 @@ int main()
             std::cin >> target;
             std::cout << "\nYour search for a recipe with " << target << " Sodium (PDV) returned:" << std::endl;
             binarySearch(recipesSodiumQuick, 4, target).print();
-            //binarySearch(recipesSodiumMerge, 4, target).print();
+            // binarySearch(recipesSodiumMerge, 4, target).print();
         }
         else if (option == 5)
         {
             // protein
 
             // checks if the protein vectors have been sorted
-            if (checkCalories == false)
+            if (checkProteinPDV == false)
             {
-                checkCalories = true;
+                checkProteinPDV = true;
 
                 // sets a start time
                 start = std::chrono::high_resolution_clock::now();
 
-                quickSort(recipesCaloriesQuick, 0, recipes.size() - 1, 5);
+                quickSort(recipesProteinQuick, 0, recipes.size() - 1, 5);
 
                 // sets a stop time
                 stop = std::chrono::high_resolution_clock::now();
-                durationCaloriesQuick = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+                durationProteinQuick = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
 
-//            // sets a start time
-//            start = std::chrono::high_resolution_clock::now();
-//
-//            MergeSort(recipesCaloriesMerge, 0, recipes.size() - 1, 5);
-//
-//            // sets a stop time
-//            stop = std::chrono::high_resolution_clock::now();
-//            durationCaloriesMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+                // sets a start time
+                start = std::chrono::high_resolution_clock::now();
+
+                MergeSort(recipesProteinMerge, 0, recipes.size() - 1, 5);
+
+                // sets a stop time
+                stop = std::chrono::high_resolution_clock::now();
+                durationProteinMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
             }
 
-            std::cout << "Time in milliseconds to sort with Quick Sort: " << durationCaloriesQuick.count() << std::endl;
-            std::cout << "Time in milliseconds to sort with Merge Sort: " << durationCaloriesMerge.count() << std::endl << std::endl;
+            std::cout << "Time in milliseconds to sort with Quick Sort: " << durationProteinQuick.count() << std::endl;
+            std::cout << "Time in milliseconds to sort with Merge Sort: " << durationProteinMerge.count() << std::endl << std::endl;
 
             // print result
-            std::cout << "Enter a target value for Calories: " << std::endl;
+            std::cout << "Enter a target value for Protein (PDV): " << std::endl;
             float target;
             std::cin >> target;
-            std::cout << "\nYour search for a recipe with " << target << " Calories returned:" << std::endl;
-            binarySearch(recipesCaloriesQuick, 5, target).print();
-            //binarySearch(recipesCaloriesMerge, 5, target).print();
+            std::cout << "\nYour search for a recipe with " << target << " Protein (PDV) returned:" << std::endl;
+            binarySearch(recipesProteinQuick, 5, target).print();
+            // binarySearch(recipesProteinMerge, 5, target).print();
         }
         else if (option == 6)
         {
             // saturated fat
 
-            // checks if the calorie vectors have been sorted
-            if (checkCalories == false)
+            // checks if the saturated fat vectors have been sorted
+            if (checkSaturatedFatPDV == false)
             {
-                checkCalories = true;
+                checkSaturatedFatPDV = true;
 
                 // sets a start time
                 start = std::chrono::high_resolution_clock::now();
 
-                quickSort(recipesCaloriesQuick, 0, recipes.size() - 1, 6);
+                quickSort(recipesSaturatedFatPDVQuick, 0, recipes.size() - 1, 6);
 
                 // sets a stop time
                 stop = std::chrono::high_resolution_clock::now();
-                durationCaloriesQuick = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+                durationSaturatedFatPDVQuick = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
 
-//            // sets a start time
-//            start = std::chrono::high_resolution_clock::now();
-//
-//            MergeSort(recipesCaloriesMerge, 0, recipes.size() - 1, 6);
-//
-//            // sets a stop time
-//            stop = std::chrono::high_resolution_clock::now();
-//            durationCaloriesMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+                // sets a start time
+                start = std::chrono::high_resolution_clock::now();
+
+                MergeSort(recipesSaturatedFatPDVMerge, 0, recipes.size() - 1, 6);
+
+                // sets a stop time
+                stop = std::chrono::high_resolution_clock::now();
+                durationSaturatedFatPDVMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
             }
 
-            std::cout << "Time in milliseconds to sort with Quick Sort: " << durationCaloriesQuick.count() << std::endl;
-            std::cout << "Time in milliseconds to sort with Merge Sort: " << durationCaloriesMerge.count() << std::endl << std::endl;
+            std::cout << "Time in milliseconds to sort with Quick Sort: " << durationSaturatedFatPDVQuick.count() << std::endl;
+            std::cout << "Time in milliseconds to sort with Merge Sort: " << durationSaturatedFatPDVMerge.count() << std::endl << std::endl;
 
             // print result
-            std::cout << "Enter a target value for Calories: " << std::endl;
+            std::cout << "Enter a target value for Saturated Fat (PDV): " << std::endl;
             float target;
             std::cin >> target;
-            std::cout << "\nYour search for a recipe with " << target << " Calories returned:" << std::endl;
-            binarySearch(recipesCaloriesQuick, 6, target).print();
-            //binarySearch(recipesCaloriesMerge, 6, target).print();
+            std::cout << "\nYour search for a recipe with " << target << " Saturated Fat (PDV) returned:" << std::endl;
+            binarySearch(recipesSaturatedFatPDVQuick, 6, target).print();
+            // binarySearch(recipesSaturateFatPDVMerge, 6, target).print();
         }
         else if (option == 7)
         {
             // carbs
 
-            // checks if the calorie vectors have been sorted
-            if (checkCalories == false)
+            // checks if the carbohydrate vectors have been sorted
+            if (checkTotalCarbohydratePDV == false)
             {
-                checkCalories = true;
+                checkTotalCarbohydratePDV = true;
 
                 // sets a start time
                 start = std::chrono::high_resolution_clock::now();
 
-                quickSort(recipesCaloriesQuick, 0, recipes.size() - 1, 7);
+                quickSort(recipesTotalCarbohydrateQuick, 0, recipes.size() - 1, 7);
 
                 // sets a stop time
                 stop = std::chrono::high_resolution_clock::now();
-                durationCaloriesQuick = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+                durationTotalCarbohydrateQuick = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
 
-//            // sets a start time
-//            start = std::chrono::high_resolution_clock::now();
-//
-//            MergeSort(recipesCaloriesMerge, 0, recipes.size() - 1, 7);
-//
-//            // sets a stop time
-//            stop = std::chrono::high_resolution_clock::now();
-//            durationCaloriesMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+                // sets a start time
+                start = std::chrono::high_resolution_clock::now();
+
+                MergeSort(recipesTotalCarbohydrateMerge, 0, recipes.size() - 1, 7);
+
+                // sets a stop time
+                stop = std::chrono::high_resolution_clock::now();
+                durationTotalCarbohydrateMerge = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
             }
 
-            std::cout << "Time in milliseconds to sort with Quick Sort: " << durationCaloriesQuick.count() << std::endl;
-            std::cout << "Time in milliseconds to sort with Merge Sort: " << durationCaloriesMerge.count() << std::endl << std::endl;
+            std::cout << "Time in milliseconds to sort with Quick Sort: " << durationTotalCarbohydrateQuick.count() << std::endl;
+            std::cout << "Time in milliseconds to sort with Merge Sort: " << durationTotalCarbohydrateMerge.count() << std::endl << std::endl;
 
             // print result
-            std::cout << "Enter a target value for Calories: " << std::endl;
+            std::cout << "Enter a target value for Total Carbohydrate (PDV): " << std::endl;
             float target;
             std::cin >> target;
-            std::cout << "\nYour search for a recipe with " << target << " Calories returned:" << std::endl;
-            binarySearch(recipesCaloriesQuick, 7, target).print();
-            //binarySearch(recipesCaloriesMerge, 7, target).print();
+            std::cout << "\nYour search for a recipe with " << target << " Total Carbohydrate (PDV) returned:" << std::endl;
+            binarySearch(recipesTotalCarbohydrateQuick, 7, target).print();
+            // binarySearch(recipesTotalCarbohydrateMerge, 7, target).print();
         }
         else
         {
